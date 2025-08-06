@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add to Cart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Stay Lit Jacket Store</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About the Jacket</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="add-to-cart.html">Add to Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Your Cart</h2>
+    <p>No items in your cart yet.</p>
+    <button onclick="addToCart()">Add Jacket to Cart</button>
+    <p id="cart-message"></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Stay Lit Innovations</p>
+  </footer>
+
+  <script>
+    function addToCart() {
+      document.getElementById('cart-message').textContent = "✅ Jacket added to your cart!";
+    }
+  </script>
+</body>
+</html>
