@@ -62,3 +62,19 @@ button {
 button:hover {
   background-color: #009999;
 }
+/* Navigation spacing & style */
+.site-nav {
+  display: flex;
+  gap: 20px; /* space between each link */
+  justify-content: center; /* center the menu under the logo */
+}
+
+.site-nav a {
+  color: cyan; /* keep your current link color */
+  text-decoration: none;
+  font-weight: bold; /* make them stand out */
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
