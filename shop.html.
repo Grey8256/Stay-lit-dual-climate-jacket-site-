@@ -18,21 +18,26 @@
   <div id="catalog" class="catalog"></div>
 
   <script>
-    async function loadProducts() {
-      const res = await fetch('manifest.json');
-      const data = await res.json();
-      const catalog = document.getElementById('catalog');
-      data.images.forEach(img => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-          <img src="${img.src}" alt="${img.alt}">
-          <div class="price">$99.00</div>
-          <button onclick="buyNow('${img.alt}')">Buy Now</button>
-        `;
-        catalog.appendChild(card);
-      });
-    }
+  async function loadProducts() {
+    const res = await fetch('manifest.json');  // <-- no leading slash
+    const data = await res.json();
+    const catalog = document.getElementById('catalog');
+    catalog.innerHTML = '';
+    data.images.forEach(img => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${img.src}" alt="${img.alt}">
+        <div class="price">$99.00</div>
+        <button onclick="buyNow('${img.alt}')">Buy Now</button>
+      `;
+      catalog.appendChild(card);
+    });
+  }
+  // ... keep the rest the same
+  loadProducts();
+</script>
+
     function buyNow(productName) {
       const email = "your-email@example.com"; // change this to YOUR email
       const subject = encodeURIComponent("Order: " + productName);
