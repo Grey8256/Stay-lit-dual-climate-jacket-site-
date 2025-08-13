@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jacket Shop</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .catalog { display: flex; flex-wrap: wrap; gap: 20px; }
+    .card { border: 1px solid #ddd; padding: 10px; width: 200px; }
+    .card img { width: 100%; }
+    .price { font-weight: bold; margin-top: 5px; }
+    button { background: black; color: white; border: none; padding: 8px; margin-top: 5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Our Jackets</h1>
+  <div id="catalog" class="catalog"></div>
+
+  <script>
+    async function loadProducts() {
+      const res = await fetch('manifest.json');
+      const data = await res.json();
+      const catalog = document.getElementById('catalog');
+      data.images.forEach(img => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${img.src}" alt="${img.alt}">
+          <div class="price">$99.00</div>
+          <button onclick="buyNow('${img.alt}')">Buy Now</button>
+        `;
+        catalog.appendChild(card);
+      });
+    }
+    function buyNow(productName) {
+      const email = "your-email@example.com"; // change this to YOUR email
+      const subject = encodeURIComponent("Order: " + productName);
+      const body = encodeURIComponent("Hello, I would like to buy: " + productName);
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    }
+    loadProducts();
+  </script>
+</body>
+</html>
