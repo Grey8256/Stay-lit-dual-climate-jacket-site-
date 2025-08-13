@@ -1,0 +1,28 @@
+{
+  "images": [
+    {
+      "src": "/assets/jackets/22.jpg",
+      "alt": "22"
+    },
+    {
+      "src": "/assets/jackets/3.jpg",
+      "alt": "3"
+    },
+    {
+      "src": "/assets/jackets/5.jpg",
+      "alt": "5"
+    },
+    {
+      "src": "/assets/jackets/6.jpg",
+      "alt": "6"
+    },
+    {
+      "src": "/assets/jackets/7.jpg",
+      "alt": "7"
+    },
+    {
+      "src": "/assets/jackets/8.jpg",
+      "alt": "8"
+    }
+  ]
+}
